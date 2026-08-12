@@ -1,0 +1,36 @@
+﻿@model IEnumerable<ABCRetailApp.Models.Product>
+
+@{
+    ViewData["Title"] = "Products";
+}
+
+<div class="container mt-4">
+    <h1>ABC Retail Products</h1>
+
+    <p class="lead">
+        Products currently available in the ABC Retail system.
+    </p>
+
+    <table class="table table-striped table-bordered">
+        <thead>
+            <tr>
+                <th>Product</th>
+                <th>Description</th>
+                <th>Price</th>
+                <th>Quantity</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            @foreach (var product in Model)
+            {
+                <tr>
+                    <td>@product.Name</td>
+                    <td>@product.Description</td>
+                    <td>R @product.Price.ToString("N2")</td>
+                    <td>@product.Quantity</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+</div>
